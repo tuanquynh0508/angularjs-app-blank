@@ -1,0 +1,11 @@
+node_modules/
+npm-debug.log
+.idea/
+*.iml
+/components/
+/lib/
+component.json
+dist/
+coverage/
+nbproject/
+vendor/

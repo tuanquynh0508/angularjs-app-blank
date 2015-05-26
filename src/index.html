@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AngularJS App 2</title>
+		<link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
+    <link href="all.css" rel="stylesheet">
+    <script type="text/javascript" src="all.js"></script>
+    <script type="text/javascript" src="<%= grunt.config.get('pkg.name') %>.js"></script>
+	</head>
+	<body ng-controller="AppCtrl">
+		<div ui-view></div>
+	</body>
+</html>
