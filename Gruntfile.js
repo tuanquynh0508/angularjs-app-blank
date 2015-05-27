@@ -70,7 +70,9 @@ module.exports = function (grunt) {
 				'vendor/ui-router/release/angular-ui-router.min.js'
 			],
 			allcss: [
-				'src/assets/css/reset.css',
+				'vendor/960-grid-system/code/css/min/reset.css',
+				'vendor/960-grid-system/code/css/min/text.css',
+				'vendor/960-grid-system/code/css/min/960.css',
 				'src/assets/css/style.css'
 			]
 		},

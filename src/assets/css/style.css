@@ -3,10 +3,28 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Feb 4, 2015, 5:05:16 PM
     Author     : tnguyennhu
 */
+
+.clearfix:after{
+    visibility:hidden;
+    display:block;
+    font-size:0;
+    content:" ";
+    clear:both;
+    height:0;
+}
+* html .clearfix{
+    zoom:1
+}
+*:first-child+html .clearfix{
+    zoom:1
+}
+.clear {
+    clear: both;
+}
 
 body {
 	font-family: 'helvetica neue', Helvetica, Arial;
@@ -14,20 +32,107 @@ body {
 	margin: 0px;
 }
 
-#header {
-	height: 100px;
-	background: url(img/logo.png) no-repeat 50% 50%;
+#bodyPage {
+	margin: 30px auto;
 }
 
 #footer {
+	width: 960px;
+	margin: 0px auto;
 	height: 100px;
 	border-top: 1px solid #dcdcdc;
-	padding: 10px;
 	text-align: center;
-	color: #333;
+	color: #C9C9C9;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
-.wrapperPage {
+.menuTop {
 	width: 960px;
-	margin: 30px auto;
+	margin: 10px auto;
+	border-bottom: 1px solid #dcdcdc;
+	border-top: 1px solid #dcdcdc;
+}
+.menuTop ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.menuTop ul li {
+	list-style: none;
+	float: left;
+	margin: 0px;
+}
+.menuTop ul li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #333;
+	font-size: 13px;
+	padding: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+.menuTop ul li.active a, .menuTop ul li a:hover {
+	color: #B50909;
+	background-color: #dcdcdc;
+}
+
+article.post {
+	font-size: 14px;
+	line-height: 24px;
+}
+article.post h1 {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+article.post p {
+	margin-bottom: 20px;
+}
+article.post ul {
+	margin-bottom: 20px;
+	padding-left: 20px;
+}
+
+.btn-link {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.btn-link span {
+  display: none;
+}
+.btn-link.disable {
+  cursor: default;
+}
+.btn-link-github {
+  background-image: url("img/github.png");
+  width: 149px;
+  height: 149px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#ContactBox input[type="text"], #ContactBox input[type="email"] {
+	width: 400px;
+}
+#ContactBox textarea {
+	width: 400px;
+	height: 150px;
+}
+input.ng-invalid, textarea.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-valid, textarea.ng-valid {
+  border: 1px solid green;
+}
+.alert-box-success {
+  color: green;
+}
+.error {
+  color: red;
+  font-style: italic;
 }

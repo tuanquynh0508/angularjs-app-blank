@@ -1,32 +1,33 @@
 {
-	"name": "angularjs-blank",
-	"version": "0.0.1",
-	"authors": [
-		"Nguyen Nhu Tuan <tuanquynh0508@gmail.com>"
-	],
-	"description": "AngularJS Application Template Blank",
-	"moduleType": [
-		"yui"
-	],	
-	"license": "MIT",
-	"homepage": "http://i-designer.net",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"vendor",
-		"test",
-		"tests"
-	],
-	"private": true,
-	"dependencies": {
-		"angular": "~1.3.x",
-		"angular-route": "~1.3.x",
-		"angular-resource": "~1.3.x"		
-	},
-	"devDependencies": {
-		"angular-translate": "~2.5.2",
-		"ng-table": "~0.3.3",
-		"ui-router": "~0.2.12"
-	}
+  "name": "angularjs-blank",
+  "version": "0.0.1",
+  "authors": [
+    "Nguyen Nhu Tuan <tuanquynh0508@gmail.com>"
+  ],
+  "description": "AngularJS Application Template Blank",
+  "moduleType": [
+    "yui"
+  ],
+  "license": "MIT",
+  "homepage": "http://i-designer.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "angular": "~1.3.x",
+    "angular-route": "~1.3.x",
+    "angular-resource": "~1.3.x",
+    "960-grid-system": "*"
+  },
+  "devDependencies": {
+    "angular-translate": "~2.5.2",
+    "ng-table": "~0.3.3",
+    "ui-router": "~0.2.12"
+  }
 }

@@ -1,8 +1,21 @@
-<header id="header"></header>
+<header id="header">
+  <p align="center"><a href="#"><img src="img/logo.png" height="30" /></a></p>
+  <nav class="menuTop">
+    <ul class="clearfix">
+      <!-- <li ui-sref-active="active"><a ui-sref="app.dashboard">Dashboard</a></li> -->
+      <li ng-class="{ active: $state.includes('app.dashboard') }"><a ui-sref="app.dashboard">Dashboard</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.blog">Blogs</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.about">About Us</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="wrapperPage">
+<div id="bodyPage" class="container_12">
 		<div ui-view></div>
 </div>
+
+<a class="btn-link btn-link-github" href="https://github.com/tuanquynh0508/angularjs-app-blank" target="_blank"><span>TuanQuynh on Github</span></a>
 
 <footer id="footer">
 	<p>TuanQuynh Lab &copy; 2014. AngularJS Application.</p>

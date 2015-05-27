@@ -1,19 +1,32 @@
-angular.module('app', [
-	'ngRoute',
-	'ngResource',
-	'ui.router',
-	'templates.app',
-	'templates.common',
-	'dashboard'
-	/*// Top level modules only
-	 'directives.test1',
-	 'filters.common',
-	 'page',
-	 'forms'*/
-])
+(function() {
+	'use strict';
 
-.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-		$stateProvider.state('layout', {
+	angular
+		.module('app', [
+			'ngRoute',
+			'ngResource',
+			'ui.router',
+			'templates.app',
+			'templates.common',
+			//Component
+			'dashboard',
+			'about',
+			'contact',
+			'blog',
+			//Directives
+			'directives.common'
+			/*// Top level modules only
+			 'directives.test1',
+			 'filters.common',
+			 'page',
+			 'forms'*/
+		])
+		.config(['$stateProvider', '$urlRouterProvider', config])
+		.controller('AppCtrl', ['$scope', '$state', '$location', appCtrl]);
+
+	////////////////////////////////////////////////////////
+	function config($stateProvider, $urlRouterProvider) {
+		$stateProvider.state('app', {
 			templateUrl: 'shared/layout.tpl.html'
 			/*data: {
 				permissions: {
@@ -22,15 +35,28 @@ angular.module('app', [
 			}*/
 		});
 		$urlRouterProvider.otherwise('/dashboard');
-	}])
+	}
 
-.controller('AppCtrl', ['$scope', '$location', function ($scope, $location) {
-		/*$scope.location = $location;
+	function appCtrl($scope, $state, $location) {
+		//$scope.location = $location;
+		$scope.$state = $state;
 
-		 $scope.gotoPage1 = function () {
-		 $location.path('/page1');
-		 };*/
+		$scope.gotoHome = function () {
+			$location.path('/dashboard');
+		};
 
-	}])
+		$scope.gotoAbout = function () {
+			$location.path('/abou_us');
+		};
 
-;
+		$scope.gotoContact = function () {
+			$location.path('/contact_us');
+		};
+
+		$scope.gotoBlog = function () {
+			$location.path('/blog');
+		};
+	}
+	////////////////////////////////////////////////////////
+
+})();

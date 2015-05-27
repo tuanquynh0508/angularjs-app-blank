@@ -1,0 +1,56 @@
+<div class="clearfix">
+
+  <div class="grid_6">
+    <img src="img/js.png" width="250" />
+  </div>
+
+  <div class="grid_6" id="ContactBox">
+    <form name="contactForm" class="css-form" novalidate>
+      <div class="alert-box-success" ng-show="sendSuccess">Send contact successful!</div>
+
+      <p><strong>Fullname:</strong></p>
+      <p>
+        <input type="text" name="fullname" ng-model="contact.fullname" ng-minlength="3" ng-maxlength="50" required/>
+        <div ng-show="contactForm.$submitted || contactForm.fullname.$touched">
+          <span class="error" ng-show="contactForm.fullname.$error.required">Required!</span>
+          <span class="error" ng-show="contactForm.fullname.$error.minlength">Your name is required to be at least 3 characters</span>
+          <span class="error" ng-show="contactForm.fullname.$error.maxlength">Your name cannot be longer than 50 characters</span>
+        </div>
+      </p>
+
+      <p><strong>Email:</strong></p>
+      <p>
+        <input type="email" name="email" ng-model="contact.email" required/>
+        <div ng-show="contactForm.$submitted || contactForm.email.$touched">
+          <span class="error" ng-show="contactForm.email.$error.required">Required!</span>
+          <span class="error" ng-show="contactForm.email.$error.email">That is not a valid email. Please input a valid email.</span>
+        </div>
+      </p>
+
+      <p><strong>Subject:</strong></p>
+      <p>
+        <input type="text" name="subject" ng-model="contact.subject"ng-minlength="3" ng-maxlength="255" required/>
+        <div ng-show="contactForm.$submitted || contactForm.subject.$touched">
+          <span class="error" ng-show="contactForm.subject.$error.required">Required!</span>
+          <span class="error" ng-show="contactForm.subject.$error.minlength">Subject is required to be at least 3 characters</span>
+          <span class="error" ng-show="contactForm.subject.$error.maxlength">Subject cannot be longer than 255 characters</span>
+        </div>
+      </p>
+
+      <p><strong>Message:</strong></p>
+      <p>
+        <textarea name="message" ng-model="contact.message" ng-minlength="8" ng-maxlength="1000" required></textarea>
+        <div ng-show="contactForm.$submitted || contactForm.message.$touched">
+          <span class="error" ng-show="contactForm.message.$error.required">Required!</span>
+          <span class="error" ng-show="contactForm.message.$error.minlength">Message is required to be at least 8 characters</span>
+          <span class="error" ng-show="contactForm.message.$error.maxlength">Message cannot be longer than 1000 characters</span>
+        </div>
+      </p>
+
+      <p><button type="submit" ng-click="sendContact(contact)">Send contact</button></p>
+
+    </form>
+  </div>
+
+  <div class="clear"></div>
+</div>
