@@ -3,12 +3,13 @@
 
   angular
     .module('resources.contact', ['ngResource'])
-    .factory(['Contact', '$resource', contact]);
+    .factory(['ContactFactory', '$resource', contactFactory]);
 
   ////////////////////////////////////////////////////////
-  function contact($resource) {
-    var Contact = $resource('api/sendContact.php', {},
-      post: {
+  function contactFactory($resource) {
+    /* jshint ignore:start */
+    var contact = $resource('/api/sendContact.php', {},
+      send: {
         method: 'POST',
         //url: 'api/sendContact.php',
         params: {
@@ -19,7 +20,8 @@
         }
       }
     );
-    return Contact;
+    return contact;
+    /* jshint ignore:end */
   }
   ////////////////////////////////////////////////////////
 

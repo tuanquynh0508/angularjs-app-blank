@@ -30,7 +30,17 @@
     $scope.sendContact = function(contact) {
       if ($scope.contactForm.$valid) {
         console.log('Send contact successful!');
-        $scope.sendSuccess = true;
+        // ContactFactory.send({
+        //   fullname: contact.fullname,
+        //   email: contact.email,
+        //   subject: contact.subject,
+        //   message: contact.message
+        // }, function(responseData) {
+        //   if(responseData.status === 'success') {
+        //     console.log('Send contact successful!');
+        //     $scope.sendSuccess = true;
+        //   }
+        // });
       } else {
         $scope.contactForm.submitted = true;
       }
