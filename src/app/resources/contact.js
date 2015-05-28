@@ -7,8 +7,7 @@
 
   ////////////////////////////////////////////////////////
   function contactFactory($resource) {
-    /* jshint ignore:start */
-    var contact = $resource('/api/sendContact.php', {},
+    var contact = $resource('/api/sendContact.php', null, {
       send: {
         method: 'POST',
         //url: 'api/sendContact.php',
@@ -19,9 +18,8 @@
           message: '@message'
         }
       }
-    );
+    });
     return contact;
-    /* jshint ignore:end */
   }
   ////////////////////////////////////////////////////////
 

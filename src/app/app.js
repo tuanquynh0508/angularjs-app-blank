@@ -14,7 +14,8 @@
 			'contact',
 			'blog',
 			//Directives
-			'directives.common'
+			'directives.common',
+			'resources.contact'
 			/*// Top level modules only
 			 'directives.test1',
 			 'filters.common',
