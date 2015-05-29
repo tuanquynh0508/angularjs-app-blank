@@ -139,12 +139,12 @@ article.post ul {
 	width: 400px;
 	height: 150px;
 }
-input.ng-invalid, textarea.ng-invalid {
+/*input.ng-invalid, textarea.ng-invalid {
   border: 1px solid red;
 }
 input.ng-valid, textarea.ng-valid {
   border: 1px solid green;
-}
+}*/
 .alert-box-success {
   color: green;
 }
