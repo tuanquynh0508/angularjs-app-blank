@@ -68,7 +68,8 @@ module.exports = function (grunt) {
 				'vendor/angular-route/angular-route.min.js',
 				'vendor/angular-resource/angular-resource.min.js',
 				'vendor/angular-translate/angular-translate.min.js',
-				'vendor/ui-router/release/angular-ui-router.min.js'
+				'vendor/ui-router/release/angular-ui-router.min.js',
+				'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
 			],
 			allcss: [
 				'vendor/960-grid-system/code/css/min/reset.css',
@@ -84,7 +85,7 @@ module.exports = function (grunt) {
 				files: [{
 						nonull: true,
 						dest: '<%= distdir %>',
-						src: ['img/*'/*Only copy IMG folder*//*'**'*/],
+						src: ['img/*', 'i18n/*'/*Only copy IMG folder*//*'**'*/],
 						expand: true,
 						cwd: 'src/assets/'
 					}, {

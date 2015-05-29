@@ -14,7 +14,9 @@
 			'contact.controller',
 			'blog.controller',
 			//Directives
-			'directives.common'
+			'directives.common',
+			//Plugins
+			'pascalprecht.translate'
 			/*// Top level modules only
 			 'directives.test1',
 			 'filters.common',
@@ -22,7 +24,8 @@
 			 'forms'*/
 		])
 		.config(['$stateProvider', '$urlRouterProvider', appConfig])
-		.controller('AppCtrl', ['$scope', '$state', '$location', appCtrl]);
+		.config(['$translateProvider', translateConfig])
+		.controller('AppCtrl', ['$scope', '$state', '$location', '$translate', appCtrl]);
 
 	////////////////////////////////////////////////////////
 	function appConfig($stateProvider, $urlRouterProvider) {
@@ -37,7 +40,16 @@
 		$urlRouterProvider.otherwise('/dashboard');
 	}
 
-	function appCtrl($scope, $state, $location) {
+	function translateConfig($translateProvider) {
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'i18n/',
+      suffix: '.json'
+    });
+    $translateProvider.preferredLanguage('vi_VN');
+    $translateProvider.useSanitizeValueStrategy('escaped');
+  }
+
+	function appCtrl($scope, $state, $location, $translate) {
 		//$scope.location = $location;
 		$scope.$state = $state;
 
@@ -56,6 +68,12 @@
 		$scope.gotoBlog = function () {
 			$location.path('/blog');
 		};
+
+		$scope.switchLanguage = function (lang) {
+			if($translate.use() !== lang) {
+				$translate.use(lang);
+			}
+    };
 	}
 	////////////////////////////////////////////////////////
 

@@ -52,6 +52,7 @@ body {
 	margin: 10px auto;
 	border-bottom: 1px solid #dcdcdc;
 	border-top: 1px solid #dcdcdc;
+  position: relative;
 }
 .menuTop ul {
 	list-style: none;
@@ -75,6 +76,11 @@ body {
 .menuTop ul li.active a, .menuTop ul li a:hover {
 	color: #B50909;
 	background-color: #dcdcdc;
+}
+.language-box {
+  position: absolute;
+  top: 8px;
+  right: 0px;
 }
 
 article.post {
@@ -114,6 +120,16 @@ article.post ul {
   position: absolute;
   top: 0px;
   right: 0px;
+}
+.btn-link-lang-en {
+  background-image: url("img/en.png");
+  width: 24px;
+  height: 24px;
+}
+.btn-link-lang-vn {
+  background-image: url("img/vn.png");
+  width: 24px;
+  height: 24px;
 }
 
 #ContactBox input[type="text"], #ContactBox input[type="email"] {

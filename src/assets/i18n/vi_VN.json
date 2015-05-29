@@ -1,0 +1,18 @@
+{
+  "MENU_DASHBOARD": "Trang chủ",
+  "MENU_BLOGS": "Bài viết",
+  "MENU_ABOUT_US": "Giới thiệu",
+  "MENU_CONTACT_US": "Liên hệ",
+
+  "CONTACT_FORM_FIELD_FULLNAME": "Họ và tên",
+  "CONTACT_FORM_FIELD_EMAIL": "E-mail",
+  "CONTACT_FORM_FIELD_SUBJECT": "Tiêu đề",
+  "CONTACT_FORM_FIELD_MESSAGE": "Nội dung",
+  "CONTACT_FORM_BUTTON_SEND": "Gửi liên hệ",
+  "CONTACT_FORM_TEXT_SUCCESS": "<h2>Gửi liên hệ thành công</h2><p>Cảm ơn bạn đã gửi liên hệ đến chúng tôi. Chúng tôi sẽ phản hồi đến bạn trong thời gian sớm nhất.</p>",
+
+  "FORM_VALIDATE_ERROR_REQUIRED": "Cần nhập",
+  "FORM_VALIDATE_ERROR_MIN_LENGTH": "{{FIELD}} yêu cầu nhập tối thiểu {{MIN}} ký tự",
+  "FORM_VALIDATE_ERROR_MAX_LENGTH": "{{FIELD}} có độ dài không quá {{MAX}} ký tự",
+  "FORM_VALIDATE_ERROR_EMAIL": "Sai định dạng email. Hãy nhập đúng định dạng email."
+}

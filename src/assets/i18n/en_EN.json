@@ -1,0 +1,18 @@
+{
+  "MENU_DASHBOARD": "Dashboard",
+  "MENU_BLOGS": "Blogs",
+  "MENU_ABOUT_US": "About Us",
+  "MENU_CONTACT_US": "Contact Us",
+
+  "CONTACT_FORM_FIELD_FULLNAME": "Fullname",
+  "CONTACT_FORM_FIELD_EMAIL": "Email",
+  "CONTACT_FORM_FIELD_SUBJECT": "Subject",
+  "CONTACT_FORM_FIELD_MESSAGE": "Message",
+  "CONTACT_FORM_BUTTON_SEND": "Send contact",
+  "CONTACT_FORM_TEXT_SUCCESS": "<h2>Send contact successful</h2><p>Thank you for send contact us. We will review and respond to you as soon as possible.</p>",
+
+  "FORM_VALIDATE_ERROR_REQUIRED": "Required",
+  "FORM_VALIDATE_ERROR_MIN_LENGTH": "{{FIELD}} is required to be at least {{MIN}} characters",
+  "FORM_VALIDATE_ERROR_MAX_LENGTH": "{{FIELD}} cannot be longer than {{MAX}} characters",
+  "FORM_VALIDATE_ERROR_EMAIL": "That is not a valid email. Please input a valid email."
+}
