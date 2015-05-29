@@ -9,24 +9,23 @@
 			'templates.app',
 			'templates.common',
 			//Component
-			'dashboard',
-			'about',
-			'contact',
-			'blog',
+			'dashboard.controller',
+			'about.controller',
+			'contact.controller',
+			'blog.controller',
 			//Directives
-			'directives.common',
-			'resources.contact'
+			'directives.common'
 			/*// Top level modules only
 			 'directives.test1',
 			 'filters.common',
 			 'page',
 			 'forms'*/
 		])
-		.config(['$stateProvider', '$urlRouterProvider', config])
+		.config(['$stateProvider', '$urlRouterProvider', appConfig])
 		.controller('AppCtrl', ['$scope', '$state', '$location', appCtrl]);
 
 	////////////////////////////////////////////////////////
-	function config($stateProvider, $urlRouterProvider) {
+	function appConfig($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('app', {
 			templateUrl: 'shared/layout.tpl.html'
 			/*data: {

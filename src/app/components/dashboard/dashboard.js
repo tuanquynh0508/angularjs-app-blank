@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('dashboard', []).config(['$stateProvider', config])
+    .module('dashboard.controller', []).config(['$stateProvider', dashboardConfig])
     .controller('DashboardCtrl', ['$scope', '$state', '$stateParams', '$filter', dashboardCtrl]);
 
   ////////////////////////////////////////////////////////
-  function config($stateProvider) {
+  function dashboardConfig($stateProvider) {
     $stateProvider.state('app.dashboard', {
       url: '/dashboard',
       controller: 'DashboardCtrl',

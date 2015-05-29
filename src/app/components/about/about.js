@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('about', []).config(['$stateProvider', config])
+    .module('about.controller', []).config(['$stateProvider', aboutConfig])
     .controller('AboutCtrl', ['$scope', '$state', '$stateParams', '$filter', aboutCtrl]);
 
   ////////////////////////////////////////////////////////
-  function config($stateProvider) {
+  function aboutConfig($stateProvider) {
     $stateProvider.state('app.about', {
       url: '/about_us',
       controller: 'AboutCtrl',

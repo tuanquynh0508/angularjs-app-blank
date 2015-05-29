@@ -5,8 +5,12 @@
   </div>
 
   <div class="grid_6" id="ContactBox">
-    <form name="contactForm" class="css-form" novalidate>
-      <div class="alert-box-success" ng-show="sendSuccess">Send contact successful!</div>
+    <div ng-show="sendSuccess">
+      <h2>Send contact successful</h2>
+      <p>Thank you for send contact us. We will review and respond to you as soon as possible.</p>
+    </div>
+
+    <form name="contactForm" class="css-form" novalidate  ng-show="!sendSuccess">
 
       <p><strong>Fullname:</strong></p>
       <p>

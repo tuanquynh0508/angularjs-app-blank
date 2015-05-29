@@ -1,16 +1,9 @@
 <?php
-$fullname = '';
-$email = '';
-$subject = '';
-$message = '';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $fullname = $_POST['fullname'];
-  $email = $_POST['email'];
-  $subject = $_POST['subject'];
-  $message = $_POST['message'];
+  $postdata = file_get_contents("php://input");
+  $request = json_decode($postdata);
 
-  sendEmail('tuanquynh0508@gmail.com', $subject, $message, $email, $fullname);
+  sendEmail('tuanquynh0508@gmail.com', $request->subject, $request->message, $request->email, $request->fullname);
 
   $data = new stdClass();
   $data->status = 'success';
@@ -21,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 function sendEmail($to, $subject, $message, $fromEmail='', $fromName='') {
-  mb_language('Japanese');
+  //mb_language('Japanese');
   mb_internal_encoding('UTF-8');
   $headers = 'From: ' . mb_encode_mimeheader($fromName) . '<' . $fromEmail . '>';
   $headers .= "\n";

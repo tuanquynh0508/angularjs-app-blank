@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('blog', []).config(['$stateProvider', config])
+    .module('blog.controller', []).config(['$stateProvider', blogConfig])
     .controller('BlogCtrl', ['$scope', '$state', '$stateParams', '$filter', blogCtrl]);
 
   ////////////////////////////////////////////////////////
-  function config($stateProvider) {
+  function blogConfig($stateProvider) {
     $stateProvider.state('app.blog', {
       url: '/blog',
       controller: 'BlogCtrl',
