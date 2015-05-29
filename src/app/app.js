@@ -16,7 +16,8 @@
 			//Directives
 			'directives.common',
 			//Plugins
-			'pascalprecht.translate'
+			'pascalprecht.translate',
+			'ngAnimate'
 			/*// Top level modules only
 			 'directives.test1',
 			 'filters.common',

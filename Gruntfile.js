@@ -69,12 +69,14 @@ module.exports = function (grunt) {
 				'vendor/angular-resource/angular-resource.min.js',
 				'vendor/angular-translate/angular-translate.min.js',
 				'vendor/ui-router/release/angular-ui-router.min.js',
+				'vendor/angular-animate/angular-animate.min.js',
 				'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
 			],
 			allcss: [
 				'vendor/960-grid-system/code/css/min/reset.css',
 				'vendor/960-grid-system/code/css/min/text.css',
 				'vendor/960-grid-system/code/css/min/960.css',
+				'vendor/angular-motion/dist/angular-motion.min.css',
 				'src/assets/css/style.css'
 			]
 		},
