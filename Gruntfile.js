@@ -28,6 +28,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-html2js');
 	//Auto replace in template
 	grunt.loadNpmTasks('grunt-cache-breaker');
+	//Karma test
+	grunt.loadNpmTasks('grunt-karma');
+	//Protractor E2E test
+  	grunt.loadNpmTasks('grunt-protractor-runner');
+	grunt.loadNpmTasks('grunt-protractor-webdriver');
 
 	//Registry Task
 	//Default task
@@ -36,6 +41,9 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', ['jshint', 'clean', 'html2js', 'concat', 'copy:assets', 'cachebreaker:build']);
 	//Release task
 	grunt.registerTask('release', ['build', /*'karma:unit', */'uglify']);
+
+	//E2E task
+	grunt.registerTask('e2e-test', ['protractor_webdriver:start', 'protractor:local']);
 
 	// Print a timestamp (useful for when watching)
 	grunt.registerTask('timestamp', function () {
@@ -241,7 +249,47 @@ module.exports = function (grunt) {
 				],
 				tasks: ['build', 'timestamp']
 			}
-		}
+		},
+		karma: {
+	      options: {
+	        configFile: 'test/config/karma.config.js'
+	      },
+	      unit: {
+	        singleRun: true
+	      }
+	    },
+	    protractor: {
+	      options: {
+	        configFile: "test/config/protractor.config.js",
+	        keepAlive: true,
+	        noColor: false
+	      },
+	      local: {
+	        options: {
+	          args: {
+	            seleniumAddress: 'http://localhost:4444/wd/hub',
+	            baseUrl: 'http://localhost:8081/'
+	          }
+	        }
+	      },
+	      dev: {
+	        options: {
+	          args: {
+	            seleniumAddress: 'http://localhost:4444/wd/hub',
+	            baseUrl: 'http://localhost:8081/'
+	          }
+	        }
+	      }
+	    },
+	    protractor_webdriver: {
+	      start: {
+	        options: {
+	          keepAlive : true ,
+	          configFile: "test/config/protractor.config.js",
+	          command: 'webdriver-manager start'
+	        }
+	      }
+	    }
 		/*,
 		 symlink: {
 		 options: {

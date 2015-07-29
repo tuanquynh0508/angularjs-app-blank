@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "ng-table": "~0.3.3",
-    "ui-router": "~0.2.12"
+    "ui-router": "~0.2.12",
+    "angular-mocks": "~1.3.x"
   }
 }

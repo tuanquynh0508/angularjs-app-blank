@@ -10,22 +10,16 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs
 ```
 
-## INSTALL Grunt:
+## INSTALL Grunt, Bower, Karma and Protractor:
 ```
-npm install -g grunt-cli
-```
-Usage
-```
+sudo npm install -g grunt-cli karma bower protractor
 npm install -d
+bower install
 ```
 
-## INSTALL Bower:
+### protractor & webdriver are for running e2e test only
 ```
-npm install -g bower
-```
-Usage
-```
-bower install
+sudo webdriver-manager update
 ```
 
 ## I) APACHE ENVIRONMENT SETUP
@@ -83,6 +77,7 @@ grunt watch
 * [https://angularjs.org/](https://angularjs.org/)
 
 ## V) Unit Test
+
 ```
-Đang cập nhật
+grunt karma
 ```

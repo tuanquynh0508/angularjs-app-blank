@@ -21,8 +21,26 @@
     "grunt-contrib-symlink": "^0.3.0",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
-	"grunt-html2js": "~0.1.0",
+    "grunt-html2js": "~0.1.0",
     "grunt-open": "^0.2.3",
-    "matchdep": "^0.3.0"
+    "matchdep": "^0.3.0",
+    "grunt-karma": "^0.10.1",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coverage": "^0.2.7",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.9",
+    "mocha": "^2.0.1",
+    "protractor": "^1.4.0",
+    "protractor-linkuisref-locator": "^1.1.2",
+    "grunt-protractor-runner": "^1.1.4",
+    "grunt-protractor-webdriver": "^0.1.9",
+    "cucumber": "^0.4.4",
+    "cucumber-junit": "^1.1.9",
+    "karma-chai-plugins": "~0.2.3",
+    "chai": "^1.10.0",
+    "chai-as-promised": "^4.1.1"
   }
 }
