@@ -42,5 +42,8 @@
     "karma-chai-plugins": "~0.2.3",
     "chai": "^1.10.0",
     "chai-as-promised": "^4.1.1"
+  },
+  "scripts": {
+    "postinstall": "bower install"
   }
 }

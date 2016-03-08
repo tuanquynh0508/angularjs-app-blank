@@ -4,18 +4,19 @@ module.exports = function(config) {
     basePath: '../..',
 
     //frameworks: ['mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
 
     // list of files / patterns to load in the browser
     files: [
       'dist/all.js',
-      'vendor/angular-mocks/angular-mocks.js',
+      'src/app/**/*.js',
+      'dist/templates/**/*.js',
       'test/unit/**/*.mocha.js'
       //'test/unit/support/world.js'
     ],
 
     preprocessors: {
-      'app/**/*.js': ['coverage']
+      'src/app/**/*.js': ['coverage']
     },
 
     // use dots reporter, as travis terminal does not support escaping sequences
@@ -73,7 +74,7 @@ module.exports = function(config) {
 
     plugins: [
       'karma-mocha',
-      //'karma-chai-plugins',
+      'karma-chai-plugins',
       'karma-phantomjs-launcher',
       'karma-coverage'
     ]

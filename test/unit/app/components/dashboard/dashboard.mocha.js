@@ -9,7 +9,8 @@ describe('Test Dashboard', function () {
   var $controller;
   var $rootScope, $scope, $state, $stateParams, $filter;
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _$state_, _$stateParams_, _$filter_) {
+  beforeEach(inject(function(_$controller_,
+    _$rootScope_, _$state_, _$stateParams_, _$filter_) {
 
     $controller = _$controller_;
     $rootScope = _$rootScope_;
@@ -34,7 +35,7 @@ describe('Test Dashboard', function () {
       });
     });
 
-    it('Nothing to test', function() {});
+    //it('Nothing to test', function() {});
   });
 
 });

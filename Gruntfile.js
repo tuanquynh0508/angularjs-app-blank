@@ -36,11 +36,11 @@ module.exports = function (grunt) {
 
 	//Registry Task
 	//Default task
-	grunt.registerTask('default', ['build'/*, 'karma:unit'*/]);
+	grunt.registerTask('default', ['build', 'karma:unit']);
 	//Build task
 	grunt.registerTask('build', ['jshint', 'clean', 'html2js', 'concat', 'copy:assets', 'cachebreaker:build']);
 	//Release task
-	grunt.registerTask('release', ['build', /*'karma:unit', */'uglify']);
+	grunt.registerTask('release', ['build', 'karma:unit', 'uglify']);
 
 	//E2E task
 	grunt.registerTask('e2e-test', ['protractor_webdriver:start', 'protractor:local']);
@@ -78,7 +78,8 @@ module.exports = function (grunt) {
 				'vendor/angular-translate/angular-translate.min.js',
 				'vendor/ui-router/release/angular-ui-router.min.js',
 				'vendor/angular-animate/angular-animate.min.js',
-				'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
+				'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+				'vendor/angular-mocks/angular-mocks.js'
 			],
 			allcss: [
 				'vendor/960-grid-system/code/css/min/reset.css',
