@@ -20,13 +20,13 @@
   ],
   "private": true,
   "dependencies": {
-    "angular": "~1.4.x",
-    "angular-route": "~1.4.x",
-    "angular-resource": "~1.4.x",
+    "angular": "~1.5.x",
+    "angular-route": "~1.5.x",
+    "angular-resource": "~1.5.x",
     "960-grid-system": "*",
     "angular-translate": "~2.7.0",
     "angular-translate-loader-static-files": "~2.7.0",
-    "angular-animate": "~1.4.x",
+    "angular-animate": "~1.5.x",
     "angular-motion": "~0.4.2"
   },
   "devDependencies": {

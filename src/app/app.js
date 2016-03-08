@@ -13,6 +13,7 @@
             'about.controller',
             'contact.controller',
             'blog.controller',
+            'demo',
             //Directives
             'directives.common',
             //Plugins

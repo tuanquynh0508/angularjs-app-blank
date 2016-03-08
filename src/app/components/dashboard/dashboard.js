@@ -18,7 +18,9 @@
     }
 
     function dashboardCtrl($scope, $state, $stateParams, $filter) {
-
+      $scope.hero = {
+        name: 'Nguyen Nhu Tuan'
+      };
     }
     ////////////////////////////////////////////////////////
 
