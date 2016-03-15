@@ -8,6 +8,7 @@
             'ui.router',
             'templates.app',
             'templates.common',
+            'ui.bootstrap',
             //Component
             'dashboard.controller',
             'about.controller',
@@ -25,11 +26,12 @@
 			 'page',
 			 'forms'*/
         ])
-        .config(['$stateProvider', '$urlRouterProvider', appConfig])
-        .config(['$translateProvider', translateConfig])
-        .controller('AppCtrl', ['$scope', '$state', '$location', '$translate', appCtrl]);
+        .config(appConfig)
+        .config(translateConfig)
+        .controller('AppCtrl', appCtrl);
 
     ////////////////////////////////////////////////////////
+    appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
     function appConfig($stateProvider, $urlRouterProvider) {
         $stateProvider.state('app', {
             templateUrl: 'shared/layout.tpl.html'
@@ -42,6 +44,7 @@
         $urlRouterProvider.otherwise('/dashboard');
     }
 
+    translateConfig.$inject = ['$translateProvider'];
     function translateConfig($translateProvider) {
         $translateProvider.useStaticFilesLoader({
             prefix: 'i18n/',
@@ -51,6 +54,7 @@
         $translateProvider.useSanitizeValueStrategy('escaped');
     }
 
+    appCtrl.$inject = ['$scope', '$state', '$location', '$translate'];
     function appCtrl($scope, $state, $location, $translate) {
         //$scope.location = $location;
         $scope.$state = $state;

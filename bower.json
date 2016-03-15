@@ -23,11 +23,13 @@
     "angular": "~1.5.x",
     "angular-route": "~1.5.x",
     "angular-resource": "~1.5.x",
-    "960-grid-system": "*",
     "angular-translate": "~2.7.0",
     "angular-translate-loader-static-files": "~2.7.0",
     "angular-animate": "~1.5.x",
-    "angular-motion": "~0.4.2"
+    "angular-motion": "~0.4.2",
+    "angular-bootstrap": "~1.2.4",
+    "jquery": "~2.2.1",
+    "bootstrap": "~3.3.6"
   },
   "devDependencies": {
     "ng-table": "~0.3.3",

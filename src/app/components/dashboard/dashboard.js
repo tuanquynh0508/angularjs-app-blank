@@ -2,10 +2,12 @@
     'use strict';
 
     angular
-        .module('dashboard.controller', []).config(['$stateProvider', dashboardConfig])
-        .controller('DashboardCtrl', ['$scope', '$state', '$stateParams', '$filter', dashboardCtrl]);
+        .module('dashboard.controller', [])
+        .config(dashboardConfig)
+        .controller('DashboardCtrl', dashboardCtrl);
 
     ////////////////////////////////////////////////////////
+    dashboardConfig.$inject = ['$stateProvider'];
     function dashboardConfig($stateProvider) {
         $stateProvider.state('app.dashboard', {
             url: '/dashboard',
@@ -17,9 +19,10 @@
         });
     }
 
+    dashboardCtrl.$inject = ['$scope', '$state', '$stateParams', '$filter'];
     function dashboardCtrl($scope, $state, $stateParams, $filter) {
       $scope.hero = {
-        name: 'Nguyen Nhu Tuan'
+        name: 'Hello Angular JS!'
       };
     }
     ////////////////////////////////////////////////////////

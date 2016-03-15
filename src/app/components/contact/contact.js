@@ -3,10 +3,11 @@
 
   angular
     .module('contact.controller', ['contact.services'])
-    .config(['$stateProvider', contactConfig])
-    .controller('ContactCtrl', ['$scope', '$state', '$stateParams', '$filter', 'ContactFactory', contactCtrl]);
+    .config(contactConfig)
+    .controller('ContactCtrl', contactCtrl);
 
   ////////////////////////////////////////////////////////
+  contactConfig.$inject = ['$stateProvider'];
   function contactConfig($stateProvider) {
     $stateProvider.state('app.contact', {
       url: '/contact_us',
@@ -18,6 +19,7 @@
     });
   }
 
+  contactCtrl.$inject = ['$scope', '$state', '$stateParams', '$filter', 'ContactFactory'];
   function contactCtrl($scope, $state, $stateParams, $filter, ContactFactory) {
     $scope.sendSuccess = false;
 

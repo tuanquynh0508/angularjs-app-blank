@@ -1,26 +1,46 @@
-<header id="header">
-  <p align="center"><a href="#"><img src="img/logo.png" height="30" /></a></p>
-  <nav class="menuTop">
-    <ul class="clearfix">
-      <!-- <li ui-sref-active="active"><a ui-sref="app.dashboard">Dashboard</a></li> -->
-      <li ng-class="{ active: $state.includes('app.dashboard') }"><a ui-sref="app.dashboard">{{ 'MENU_DASHBOARD' | translate }}</a></li>
-      <li ui-sref-active="active"><a ui-sref="app.blog">{{ 'MENU_BLOGS' | translate }}</a></li>
-      <li ui-sref-active="active"><a ui-sref="app.about">{{ 'MENU_ABOUT_US' | translate }}</a></li>
-      <li ui-sref-active="active"><a ui-sref="app.contact">{{ 'MENU_CONTACT_US' | translate }}</a></li>
-    </ul>
-    <div class="language-box">
-      <a class="btn-link btn-link-lang-vn" ng-click="switchLanguage('vi_VN')"><span>Vietnamese</span></a>
-      <a class="btn-link btn-link-lang-en" ng-click="switchLanguage('en_EN')"><span>English</span></a>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-expanded="false"
+        aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" height="30"/></a>
     </div>
-  </nav>
-</header>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li ng-class="{ active: $state.includes('app.dashboard') }">
+          <a href ui-sref="app.dashboard">{{ 'MENU_DASHBOARD' | translate }}</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.blog">{{ 'MENU_BLOGS' | translate }}</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.about">{{ 'MENU_ABOUT_US' | translate }}</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.contact">{{ 'MENU_CONTACT_US' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
 
-<div id="bodyPage" class="container_12">
-		<div ui-view class="am-fade"></div>
-</div>
+<div ui-view class="am-fade"></div>
 
-<a class="btn-link btn-link-github" href="https://github.com/tuanquynh0508/angularjs-app-blank" target="_blank"><span>TuanQuynh on Github</span></a>
-
-<footer id="footer">
-	<p>TuanQuynh Lab &copy; 2014. AngularJS Application.</p>
-</footer>
+<a
+  class="btn-link btn-link-github"
+  href="https://github.com/tuanquynh0508/angularjs-app-blank"
+  target="_blank">
+  <span>TuanQuynh on Github</span>
+</a>

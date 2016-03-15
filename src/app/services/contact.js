@@ -3,9 +3,10 @@
 
   angular
     .module('contact.services', ['ngResource'])
-    .factory('ContactFactory', ['$resource', contactFactory]);
+    .factory('ContactFactory', contactFactory);
 
   ////////////////////////////////////////////////////////
+  contactFactory.$inject = ['$resource'];
   function contactFactory($resource) {
     var contact = $resource('/api/sendContact.php', null, {
       sendContact: {

@@ -10,9 +10,10 @@
         hero: '='
       },
     })
-    .controller('sayHelloController', ['$scope', '$state', '$stateParams', sayHelloController]);
+    .controller('sayHelloController', sayHelloController);
 
   ////////////////////////////////////////////////////////
+  sayHelloController.$inject = ['$scope', '$state', '$stateParams'];
   function sayHelloController($scope, $state, $stateParams) {
   }
   ////////////////////////////////////////////////////////

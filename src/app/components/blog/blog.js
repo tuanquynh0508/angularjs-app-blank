@@ -2,10 +2,11 @@
   'use strict';
 
   angular
-    .module('blog.controller', []).config(['$stateProvider', blogConfig])
-    .controller('BlogCtrl', ['$scope', '$state', '$stateParams', '$filter', blogCtrl]);
+    .module('blog.controller', []).config(blogConfig)
+    .controller('BlogCtrl', blogCtrl);
 
   ////////////////////////////////////////////////////////
+  blogConfig.$inject = ['$stateProvider'];
   function blogConfig($stateProvider) {
     $stateProvider.state('app.blog', {
       url: '/blog',
@@ -17,6 +18,7 @@
     });
   }
 
+  blogCtrl.$inject = ['$scope', '$state', '$stateParams', '$filter'];
   function blogCtrl($scope, $state, $stateParams, $filter) {
 
   }

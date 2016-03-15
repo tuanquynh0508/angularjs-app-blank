@@ -71,7 +71,6 @@ module.exports = function (grunt) {
 		},
 		lib: {
 			alljs: [
-				//'vendor/jquery/dist/jquery.min.js',
 				'vendor/angular/angular.min.js',
 				'vendor/angular-route/angular-route.min.js',
 				'vendor/angular-resource/angular-resource.min.js',
@@ -79,15 +78,16 @@ module.exports = function (grunt) {
 				'vendor/ui-router/release/angular-ui-router.min.js',
 				'vendor/angular-animate/angular-animate.min.js',
 				'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-				'vendor/angular-mocks/angular-mocks.js'
+				'vendor/angular-mocks/angular-mocks.js',
+				'vendor/angular-bootstrap/ui-bootstrap.min.js'
 			],
 			allcss: [
-				'vendor/960-grid-system/code/css/min/reset.css',
-				'vendor/960-grid-system/code/css/min/text.css',
-				'vendor/960-grid-system/code/css/min/960.css',
-				'vendor/angular-motion/dist/angular-motion.min.css',
+				'vendor/angular-bootstrap/ui-bootstrap-csp.css',
+				'vendor/angular-motion/dist/angular-motion.min.css'
+			],
+			appcss: [
 				'src/assets/css/style.css'
-			]
+			],
 		},
 		//Task------------------------------------------------------------------
 		clean: ['<%= distdir %>/*'],
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 				files: [{
 						nonull: true,
 						dest: '<%= distdir %>',
-						src: ['img/*', 'i18n/*'/*Only copy IMG folder*//*'**'*/],
+						src: ['js/*', 'img/*', 'i18n/*'/*Only copy IMG folder*//*'**'*/],
 						expand: true,
 						cwd: 'src/assets/'
 					}, {
@@ -110,75 +110,87 @@ module.exports = function (grunt) {
 						src: ['api/*'],
 						expand: true,
 						cwd: 'src/'
+					}, {
+						nonull: true,
+						dest: '<%= distdir %>/vendor/bootstrap',
+						src: ['**/*.min.*', 'fonts/*.*'],
+						expand: true,
+						cwd: 'vendor/bootstrap/dist/'
+					}, {
+						nonull: true,
+						dest: '<%= distdir %>/vendor',
+						src: 'jquery.min.js',
+						expand: true,
+						cwd: 'vendor/jquery/dist/'
 					}]
 			}
 		},
 		jshint: {
-			files: ['GruntFile.js', '<%= src.js %>'/*, '<%= src.jsTpl %>', '<%= src.jsTest %>'*/],
+			files: [/*'GruntFile.js',*/ '<%= src.js %>'/*, '<%= src.jsTpl %>', '<%= src.jsTest %>'*/],
 			options: {
-				"bitwise": true,
-				"camelcase": true,
-				"curly": true,
-				"eqeqeq": true,
-				"es3": false,
-				"forin": true,
-				"freeze": true,
-				"immed": true,
-				"indent": 4,
-				"latedef": "nofunc",
-				"newcap": true,
-				"noarg": true,
-				"noempty": true,
-				"nonbsp": true,
-				"nonew": true,
-				"plusplus": false,
-				"quotmark": "single",
-				"undef": true,
-				"unused": false,
-				"strict": false,
-				"maxparams": 10,
-				"maxdepth": 5,
-				"maxstatements": 40,
-				"maxcomplexity": 8,
-				"maxlen": 120,
-				"asi": false,
-				"boss": false,
-				"debug": false,
-				"eqnull": true,
-				"esnext": false,
-				"evil": false,
-				"expr": false,
-				"funcscope": false,
-				"globalstrict": false,
-				"iterator": false,
-				"lastsemic": false,
-				"laxbreak": false,
-				"laxcomma": false,
-				"loopfunc": true,
-				"maxerr": false,
-				"moz": false,
-				"multistr": false,
-				"notypeof": false,
-				"proto": false,
-				"scripturl": false,
-				"shadow": false,
-				"sub": true,
-				"supernew": false,
-				"validthis": false,
-				"noyield": false,
-				"browser": true,
-				"node": true,
-				"globals": {
-					//"angular": false,
-					//"$": false
-					"jasmine": true,
-	        "angular": true,
-	        "browser": true,
-	        "element": true,
-	        "by":true,
-	        "io":true,
-	        "_":false,
-	        "$":false
+				'bitwise': true,
+				'camelcase': true,
+				'curly': true,
+				'eqeqeq': true,
+				'es3': false,
+				'forin': true,
+				'freeze': true,
+				'immed': true,
+				'indent': 4,
+				'latedef': 'nofunc',
+				'newcap': true,
+				'noarg': true,
+				'noempty': true,
+				'nonbsp': true,
+				'nonew': true,
+				'plusplus': false,
+				'quotmark': 'single',
+				'undef': true,
+				'unused': false,
+				'strict': false,
+				'maxparams': 10,
+				'maxdepth': 5,
+				'maxstatements': 40,
+				'maxcomplexity': 8,
+				'maxlen': 120,
+				'asi': false,
+				'boss': false,
+				'debug': false,
+				'eqnull': true,
+				'esnext': false,
+				'evil': false,
+				'expr': false,
+				'funcscope': false,
+				'globalstrict': false,
+				'iterator': false,
+				'lastsemic': false,
+				'laxbreak': false,
+				'laxcomma': false,
+				'loopfunc': true,
+				'maxerr': false,
+				'moz': false,
+				'multistr': false,
+				'notypeof': false,
+				'proto': false,
+				'scripturl': false,
+				'shadow': false,
+				'sub': true,
+				'supernew': false,
+				'validthis': false,
+				'noyield': false,
+				'browser': true,
+				'node': true,
+				'globals': {
+					//'angular': false,
+					//'$': false
+					'jasmine': true,
+	        'angular': true,
+	        'browser': true,
+	        'element': true,
+	        'by':true,
+	        'io':true,
+	        '_':false,
+	        '$':false
 				}
 			}
 		},
@@ -203,10 +215,10 @@ module.exports = function (grunt) {
 		concat: {
 			dist: {
 				options: {
-					banner: "<%= docinfo %>"
+					banner: '<%= docinfo %>'
 				},
 				src: ['<%= src.js %>', '<%= src.jsTpl %>'],
-				dest: '<%= distdir %>/<%= pkg.name %>.js'
+				dest: '<%= distdir %>/js/<%= pkg.name %>.js'
 			},
 			index: {
 				src: ['<%= src.html %>'],
@@ -217,17 +229,21 @@ module.exports = function (grunt) {
 			},
 			alljs: {
 				src: '<%= lib.alljs %>',
-				dest: '<%= distdir %>/all.js'
+				dest: '<%= distdir %>/js/libs.js'
 			},
 			allcss: {
 				src: '<%= lib.allcss %>',
-				dest: '<%= distdir %>/all.css'
+				dest: '<%= distdir %>/css/libs.css'
+			},
+			appcss: {
+				src: '<%= lib.appcss %>',
+				dest: '<%= distdir %>/css/<%= pkg.name %>.css'
 			}
 		},
 		cachebreaker: {
 			build: {
 				options: {
-					match: ['<%= pkg.name %>.js', 'all.css']
+					match: ['<%= pkg.name %>.js', 'libs.css']
 				},
 				files: {
 					src: ['dist/index.html']
@@ -237,10 +253,10 @@ module.exports = function (grunt) {
 		uglify: {
 			dist: {
 				options: {
-					banner: "<%= docinfo %>"
+					banner: '<%= docinfo %>'
 				},
 				src: ['<%= src.js %>', '<%= src.jsTpl %>'],
-				dest: '<%= distdir %>/<%= pkg.name %>.js'
+				dest: '<%= distdir %>/js/<%= pkg.name %>.js'
 			}
 		},
 		watch: {
@@ -261,7 +277,7 @@ module.exports = function (grunt) {
 	    },
 	    protractor: {
 	      options: {
-	        configFile: "test/config/protractor.config.js",
+	        configFile: 'test/config/protractor.config.js',
 	        keepAlive: true,
 	        noColor: false
 	      },
@@ -286,7 +302,7 @@ module.exports = function (grunt) {
 	      start: {
 	        options: {
 	          keepAlive : true ,
-	          configFile: "test/config/protractor.config.js",
+	          configFile: 'test/config/protractor.config.js',
 	          command: 'webdriver-manager start'
 	        }
 	      }
