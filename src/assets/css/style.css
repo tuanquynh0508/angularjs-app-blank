@@ -3,84 +3,74 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
+
+
 /*
     Created on : Feb 4, 2015, 5:05:16 PM
     Author     : tnguyennhu
 */
-body {
-	font-family: 'helvetica neue', Helvetica, Arial;
-	font-size: 12px;
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
 
+body {
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
 article.post {
-	font-size: 14px;
-	line-height: 24px;
+    font-size: 14px;
+    line-height: 24px;
 }
 article.post h1 {
-	font-size: 24px;
-	margin-bottom: 30px;
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 article.post p {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 article.post ul {
-	margin-bottom: 20px;
-	padding-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
 }
-
 .btn-link {
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  background-position: 50% 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .btn-link span {
-  display: none;
+    display: none;
 }
 .btn-link.disable {
-  cursor: default;
+    cursor: default;
 }
 .btn-link-github {
-  background-image: url("../img/github.png");
-  width: 149px;
-  height: 149px;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  z-index: 9999;
+    background-image: url("../img/github.png");
+    width: 149px;
+    height: 149px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 9999;
 }
 .btn-link-lang-en {
-  background-image: url("../img/en.png");
-  width: 24px;
-  height: 24px;
+    background-image: url("../img/en.png");
+    width: 24px;
+    height: 24px;
 }
 .btn-link-lang-vn {
-  background-image: url("../img/vn.png");
-  width: 24px;
-  height: 24px;
+    background-image: url("../img/vn.png");
+    width: 24px;
+    height: 24px;
 }
 
-#ContactBox input[type="text"], #ContactBox input[type="email"] {
-	width: 400px;
-}
-#ContactBox textarea {
-	width: 400px;
-	height: 150px;
-}
 /*input.ng-invalid, textarea.ng-invalid {
   border: 1px solid red;
 }
 input.ng-valid, textarea.ng-valid {
   border: 1px solid green;
 }*/
-.alert-box-success {
-  color: green;
-}
+
 .error {
-  color: red;
-  font-style: italic;
+    color: red;
+    font-style: italic;
 }

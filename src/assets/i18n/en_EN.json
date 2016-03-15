@@ -4,6 +4,7 @@
   "MENU_ABOUT_US": "About Us",
   "MENU_CONTACT_US": "Contact Us",
 
+  "CONTACT_FORM_TITLE": "Contact Us",
   "CONTACT_FORM_FIELD_FULLNAME": "Fullname",
   "CONTACT_FORM_FIELD_EMAIL": "Email",
   "CONTACT_FORM_FIELD_SUBJECT": "Subject",

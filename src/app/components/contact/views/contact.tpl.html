@@ -1,57 +1,77 @@
-<div class="clearfix">
-
-  <div class="grid_6">
-    <img src="img/js.png" width="250" />
-  </div>
-
-  <div class="grid_6" id="ContactBox">
-    <div ng-show="sendSuccess" translate="CONTACT_FORM_TEXT_SUCCESS"></div>
-
-    <form name="contactForm" class="css-form" novalidate  ng-show="!sendSuccess">
-
-      <p><strong>{{ 'CONTACT_FORM_FIELD_FULLNAME' | translate }}:</strong></p>
-      <p>
-        <input type="text" name="fullname" ng-model="contact.fullname" ng-minlength="3" ng-maxlength="50" required/>
-        <div ng-show="contactForm.$submitted || contactForm.fullname.$touched">
-          <span class="error" ng-show="contactForm.fullname.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
-          <span class="error" ng-show="contactForm.fullname.$error.minlength">{{ 'FORM_VALIDATE_ERROR_MIN_LENGTH' | translate:'{ FIELD: "Fullname", MIN: 3 }' }}</span>
-          <span class="error" ng-show="contactForm.fullname.$error.maxlength">{{ 'FORM_VALIDATE_ERROR_MAX_LENGTH' | translate:'{ FIELD: "Fullname", MAX: 50 }' }}</span>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-5 col-md-5">
+            <img src="img/angular-js-3.jpg" class="img-responsive"/>
         </div>
-      </p>
 
-      <p><strong>{{ 'CONTACT_FORM_FIELD_EMAIL' | translate }}:</strong></p>
-      <p>
-        <input type="email" name="email" ng-model="contact.email" required/>
-        <div ng-show="contactForm.$submitted || contactForm.email.$touched">
-          <span class="error" ng-show="contactForm.email.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
-          <span class="error" ng-show="contactForm.email.$error.email">{{ 'FORM_VALIDATE_ERROR_EMAIL' | translate }}</span>
+        <div class="col-xs-7 col-md-7">
+            <div class="page-header">
+                <h1 translate="CONTACT_FORM_TITLE"></h1>
+            </div>
+
+            <div ng-show="sendSuccess" class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <p translate="CONTACT_FORM_TEXT_SUCCESS"></p>
+            </div>
+
+            <form name="contactForm" class="form-horizontal" novalidate ng-show="!sendSuccess">
+
+                <div class="form-group">
+                    <label for="fullname" class="col-sm-2 control-label">{{ 'CONTACT_FORM_FIELD_FULLNAME' | translate }}</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="fullname" id="fullname" ng-model="contact.fullname" ng-minlength="3" ng-maxlength="50" required/>
+                        <div ng-show="contactForm.$submitted || contactForm.fullname.$touched">
+                            <span class="error" ng-show="contactForm.fullname.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
+                            <span class="error" ng-show="contactForm.fullname.$error.minlength">{{ 'FORM_VALIDATE_ERROR_MIN_LENGTH' | translate:'{ FIELD: "Fullname", MIN: 3 }' }}</span>
+                            <span class="error" ng-show="contactForm.fullname.$error.maxlength">{{ 'FORM_VALIDATE_ERROR_MAX_LENGTH' | translate:'{ FIELD: "Fullname", MAX: 50 }' }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">{{ 'CONTACT_FORM_FIELD_EMAIL' | translate }}</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" id="email" ng-model="contact.email" required/>
+                        <div ng-show="contactForm.$submitted || contactForm.email.$touched">
+                            <span class="error" ng-show="contactForm.email.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
+                            <span class="error" ng-show="contactForm.email.$error.email">{{ 'FORM_VALIDATE_ERROR_EMAIL' | translate }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="col-sm-2 control-label">{{ 'CONTACT_FORM_FIELD_SUBJECT' | translate }}</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="subject" id="subject" ng-model="contact.subject" ng-minlength="3" ng-maxlength="255" required/>
+                        <div ng-show="contactForm.$submitted || contactForm.subject.$touched">
+                            <span class="error" ng-show="contactForm.subject.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
+                            <span class="error" ng-show="contactForm.subject.$error.minlength">{{ 'FORM_VALIDATE_ERROR_MIN_LENGTH' | translate:'{ FIELD: "Subject", MIN: 3 }' }}</span>
+                            <span class="error" ng-show="contactForm.subject.$error.maxlength">{{ 'FORM_VALIDATE_ERROR_MAX_LENGTH' | translate:'{ FIELD: "Subject", MAX: 255 }' }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="col-sm-2 control-label">{{ 'CONTACT_FORM_FIELD_MESSAGE' | translate }}</label>
+                    <div class="col-sm-10">
+                        <textarea name="message" id="message" class="form-control" ng-model="contact.message" ng-minlength="8" ng-maxlength="1000" required></textarea>
+                        <div ng-show="contactForm.$submitted || contactForm.message.$touched">
+                            <span class="error" ng-show="contactForm.message.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
+                            <span class="error" ng-show="contactForm.message.$error.minlength">{{ 'FORM_VALIDATE_ERROR_MIN_LENGTH' | translate:'{ FIELD: "Message", MIN: 8 }' }}</span>
+                            <span class="error" ng-show="contactForm.message.$error.maxlength">{{ 'FORM_VALIDATE_ERROR_MAX_LENGTH' | translate:'{ FIELD: "Message", MAX: 1000 }' }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">&nbsp;</label>
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-click="sendContact(contact)">{{ 'CONTACT_FORM_BUTTON_SEND' | translate }}</button>
+                    </div>
+                </div>
+
+            </form>
         </div>
-      </p>
 
-      <p><strong>{{ 'CONTACT_FORM_FIELD_SUBJECT' | translate }}:</strong></p>
-      <p>
-        <input type="text" name="subject" ng-model="contact.subject"ng-minlength="3" ng-maxlength="255" required/>
-        <div ng-show="contactForm.$submitted || contactForm.subject.$touched">
-          <span class="error" ng-show="contactForm.subject.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
-          <span class="error" ng-show="contactForm.subject.$error.minlength">{{ 'FORM_VALIDATE_ERROR_MIN_LENGTH' | translate:'{ FIELD: "Subject", MIN: 3 }' }}</span>
-          <span class="error" ng-show="contactForm.subject.$error.maxlength">{{ 'FORM_VALIDATE_ERROR_MAX_LENGTH' | translate:'{ FIELD: "Subject", MAX: 255 }' }}</span>
-        </div>
-      </p>
-
-      <p><strong>{{ 'CONTACT_FORM_FIELD_MESSAGE' | translate }}:</strong></p>
-      <p>
-        <textarea name="message" ng-model="contact.message" ng-minlength="8" ng-maxlength="1000" required></textarea>
-        <div ng-show="contactForm.$submitted || contactForm.message.$touched">
-          <span class="error" ng-show="contactForm.message.$error.required" translate="FORM_VALIDATE_ERROR_REQUIRED"></span>
-          <span class="error" ng-show="contactForm.message.$error.minlength">{{ 'FORM_VALIDATE_ERROR_MIN_LENGTH' | translate:'{ FIELD: "Message", MIN: 8 }' }}</span>
-          <span class="error" ng-show="contactForm.message.$error.maxlength">{{ 'FORM_VALIDATE_ERROR_MAX_LENGTH' | translate:'{ FIELD: "Message", MAX: 1000 }' }}</span>
-        </div>
-      </p>
-
-      <p><button type="submit" ng-click="sendContact(contact)">{{ 'CONTACT_FORM_BUTTON_SEND' | translate }}</button></p>
-
-    </form>
-  </div>
-
-  <div class="clear"></div>
+    </div>
 </div>
