@@ -8,7 +8,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'dist/all.js',
+      'dist/js/libs.js',
       'src/app/**/*.js',
       'dist/templates/**/*.js',
       'test/unit/**/*.mocha.js'
