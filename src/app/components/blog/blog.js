@@ -2,7 +2,8 @@
   'use strict';
 
   angular
-    .module('blog.controller', []).config(blogConfig)
+    .module('blog.controller', ['blog.services'])
+    .config(blogConfig)
     .controller('BlogCtrl', blogCtrl);
 
   ////////////////////////////////////////////////////////
@@ -21,9 +22,13 @@
     });
   }
 
-  blogCtrl.$inject = ['$scope', '$state', '$stateParams', '$filter'];
-  function blogCtrl($scope, $state, $stateParams, $filter) {
-
+  blogCtrl.$inject = ['$scope', '$state', '$stateParams', '$filter', 'BlogFactory'];
+  function blogCtrl($scope, $state, $stateParams, $filter, BlogFactory) {
+    BlogFactory.getList('category_1').then(function(data){
+      console.log(data);
+    }, function(){
+      console.log('Errors!');
+    });
   }
   ////////////////////////////////////////////////////////
 
