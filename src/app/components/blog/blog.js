@@ -12,8 +12,11 @@
       url: '/blog',
       controller: 'BlogCtrl',
       templateUrl: 'components/blog/views/blog.tpl.html',
-      data: {
-        pageTitle: 'Blogs'
+      resolve: {
+          // Constant title
+          $title: function () {
+            return 'MENU_BLOGS';
+          }
       }
     });
   }

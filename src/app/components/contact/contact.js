@@ -13,8 +13,11 @@
       url: '/contact_us',
       controller: 'ContactCtrl',
       templateUrl: 'components/contact/views/contact.tpl.html',
-      data: {
-        pageTitle: 'Contact Us'
+      resolve: {
+          // Constant title
+          $title: function () {
+            return 'MENU_CONTACT_US';
+          }
       }
     });
   }

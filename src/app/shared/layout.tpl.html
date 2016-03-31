@@ -22,7 +22,11 @@
           <a href ui-sref="app.dashboard">{{ 'MENU_DASHBOARD' | translate }}</a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="app.blog">{{ 'MENU_BLOGS' | translate }}</a>
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'MENU_BLOGS' | translate }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Category 1</a></li>
+            <li><a href="#">Category 2</a></li>
+          </ul>
         </li>
         <li ui-sref-active="active">
           <a ui-sref="app.about">{{ 'MENU_ABOUT_US' | translate }}</a>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="app">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<%= grunt.config.get('pkg.description') %>">
+		<meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
     <meta name="author" content="<%= grunt.config.get('pkg.author') %>">
-		<title>AngularJS Application Template Blank</title>
+		<title ng-bind="(($title|translate) || '') + ' - AngularJS Application Template Blank'">AngularJS Application Template Blank</title>
 		<link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/libs.css" rel="stylesheet">
@@ -17,7 +18,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 	</head>
-	<body ng-app="app" ng-controller="AppCtrl">
+	<body ng-controller="AppCtrl">
 		<div ui-view></div>
 
 		<script type="text/javascript" src="vendor/jquery.min.js"></script>

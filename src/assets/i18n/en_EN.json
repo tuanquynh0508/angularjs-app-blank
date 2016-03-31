@@ -15,5 +15,10 @@
   "FORM_VALIDATE_ERROR_REQUIRED": "Required",
   "FORM_VALIDATE_ERROR_MIN_LENGTH": "{{FIELD}} is required to be at least {{MIN}} characters",
   "FORM_VALIDATE_ERROR_MAX_LENGTH": "{{FIELD}} cannot be longer than {{MAX}} characters",
-  "FORM_VALIDATE_ERROR_EMAIL": "That is not a valid email. Please input a valid email."
+  "FORM_VALIDATE_ERROR_EMAIL": "That is not a valid email. Please input a valid email.",
+
+  "BLOG_TEXT_CATEGORIES": "Categories",
+
+  "BTN_PREV": "Previous",
+  "BTN_NEXT": "Next"
 }

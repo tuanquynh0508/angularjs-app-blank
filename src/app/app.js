@@ -9,6 +9,7 @@
             'templates.app',
             'templates.common',
             'ui.bootstrap',
+            'ui.router.title',
             //Component
             'dashboard.controller',
             'about.controller',

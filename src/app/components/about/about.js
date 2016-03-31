@@ -12,8 +12,11 @@
       url: '/about_us',
       controller: 'AboutCtrl',
       templateUrl: 'components/about/views/about.tpl.html',
-      data: {
-        pageTitle: 'About Us'
+      resolve: {
+          // Constant title
+          $title: function () {
+            return 'MENU_ABOUT_US';
+          }
       }
     });
   }

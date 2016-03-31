@@ -78,6 +78,7 @@ module.exports = function (grunt) {
 				'vendor/ui-router/release/angular-ui-router.min.js',
 				'vendor/angular-animate/angular-animate.min.js',
 				'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+				'vendor/angular-ui-router-title/angular-ui-router-title.js',
 				'vendor/angular-mocks/angular-mocks.js',
 				'vendor/angular-bootstrap/ui-bootstrap.min.js'
 			],

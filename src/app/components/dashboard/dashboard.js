@@ -13,8 +13,11 @@
             url: '/dashboard',
             controller: 'DashboardCtrl',
             templateUrl: 'components/dashboard/views/dashboard.tpl.html',
-            data: {
-                pageTitle: 'Dashboard Page'
+            resolve: {
+                // Constant title
+                $title: function () {
+                  return 'MENU_DASHBOARD';
+                }
             }
         });
     }

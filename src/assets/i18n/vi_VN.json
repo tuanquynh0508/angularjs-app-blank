@@ -15,5 +15,10 @@
   "FORM_VALIDATE_ERROR_REQUIRED": "Cần nhập",
   "FORM_VALIDATE_ERROR_MIN_LENGTH": "{{FIELD}} yêu cầu nhập tối thiểu {{MIN}} ký tự",
   "FORM_VALIDATE_ERROR_MAX_LENGTH": "{{FIELD}} có độ dài không quá {{MAX}} ký tự",
-  "FORM_VALIDATE_ERROR_EMAIL": "Sai định dạng email. Hãy nhập đúng định dạng email."
+  "FORM_VALIDATE_ERROR_EMAIL": "Sai định dạng email. Hãy nhập đúng định dạng email.",
+
+  "BLOG_TEXT_CATEGORIES": "Danh mục",
+
+  "BTN_PREV": "Trước",
+  "BTN_NEXT": "Sau"
 }
