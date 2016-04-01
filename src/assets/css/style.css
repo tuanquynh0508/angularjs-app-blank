@@ -74,3 +74,15 @@ input.ng-valid, textarea.ng-valid {
     color: red;
     font-style: italic;
 }
+
+.p-r-10 {
+  padding-right: 10px;
+}
+
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+.list-group-item.active a {
+  color: #fff;
+}

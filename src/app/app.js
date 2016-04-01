@@ -10,6 +10,7 @@
             'templates.common',
             'ui.bootstrap',
             'ui.router.title',
+            'ngSanitize',
             //Component
             'dashboard.controller',
             'about.controller',
@@ -18,6 +19,8 @@
             'demo',
             //Directives
             'directives.common',
+            //Filters
+            'filters.common',
             //Plugins
             'pascalprecht.translate',
             'ngAnimate'

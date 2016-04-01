@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+  <li ng-repeat="item in breadcrumb" ui-sref-active="active">
+    <a ui-sref="app.blog({categorySlug: item.id})" ng-show="item.type === 'category'">{{ item.title }}</a>
+    <a ui-sref="app.blog.article({categorySlug: item.category, articleId: item.id})" ng-show="item.type === 'article'">{{ item.title }}</a>
+  </li>
+</ol>

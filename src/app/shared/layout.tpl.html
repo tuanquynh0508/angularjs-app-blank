@@ -24,8 +24,8 @@
         <li ui-sref-active="active">
           <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'MENU_BLOGS' | translate }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
+            <li><a ui-sref="app.blog({categorySlug: 'category_1'})">Category 1</a></li>
+            <li><a ui-sref="app.blog({categorySlug: 'category_2'})">Category 2</a></li>
           </ul>
         </li>
         <li ui-sref-active="active">

@@ -1,0 +1,13 @@
+<div ng-include src="'components/blog/views/breadcrumb.tpl.html'"></div>
+
+<article>
+  <div class="page-header">
+    <h1>{{ article.title }}</h1>
+  </div>
+  <p><strong><em>{{ article.summary }}</em></strong></p>
+  <hr/>
+  <div class="content row">
+    <img ng-src="{{ article.thumb }}" alt="{{ article.title }}" class="pull-left p-r-10 p-b-10">
+    <div ng-bind-html="article.content|rawHtml"></div>
+  </div>
+</article>

@@ -1,0 +1,28 @@
+<div ng-include src="'components/blog/views/breadcrumb.tpl.html'"></div>
+
+<div class="page-header">
+  <h1>{{'MENU_BLOGS'|translate}} <small>{{ category.title }}</small></h1>
+</div>
+
+<div class="row" ng-repeat="article in category.articles">
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <a ui-sref="app.blog.article({categorySlug: categorySlug, articleId: article.id})" class="thumbnail">
+      <img ng-src="{{ article.thumb }}" alt="{{ article.title }}">
+    </a>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    <h4><a ui-sref="app.blog.article({categorySlug: categorySlug, articleId: article.id})">{{ article.title }}</a></h4>
+    <p>{{ article.summary }}</p>
+  </div>
+</div>
+
+<nav>
+  <ul class="pager">
+    <li class="previous disabled">
+      <a href><span aria-hidden="true">&larr;</span> {{ 'BTN_PREV'|translate }}</a>
+    </li>
+    <li class="next disabled">
+      <a href>{{ 'BTN_NEXT'|translate }} <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>
