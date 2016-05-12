@@ -71,7 +71,7 @@ grunt watch
 
 ## III) Demo Online URL
 ---
-* [http://i-designer.net/](http://i-designer.net/)
+* [http://angular.i-designer.net/](http://angular.i-designer.net/)
 
 ## IV) Tài liệu tham khảo
 * [https://angularjs.org/](https://angularjs.org/)
